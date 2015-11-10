@@ -1,0 +1,19 @@
+0 and length <<2;
+"""
+2
+@a = ('0 and length <<2;','!!!','2','print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)} @a[0..2];','print "@","a = (", map({chr(39).$_.chr(39).","} @a), ");".chr(10);','print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)}  @a[3..9];','print "a = [", join(", ",map({chr(39).$_.chr(39)} @a)), "]".chr(10);','print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)}  @a[10..$#a];','$_ = <<"#";','# !!!','for s in a[0:3]: print s.replace(chr(33), chr(34))','print "".join(["@a = ("]+map(lambda s:chr(39)+s+chr(39)+",", a)+[");"]);','for s in a[3:10]: print s.replace(chr(33), chr(34))','print "a =", a','for s in a[10:]: print s.replace(chr(33), chr(34))','#','# !!!',);
+print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)} @a[0..2];
+print "@","a = (", map({chr(39).$_.chr(39).","} @a), ");".chr(10);
+print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)}  @a[3..9];
+print "a = [", join(", ",map({chr(39).$_.chr(39)} @a)), "]".chr(10);
+print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)}  @a[10..$#a];
+$_ = <<"#";
+# """
+a = ['0 and length <<2;', '!!!', '2', 'print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)} @a[0..2];', 'print "@","a = (", map({chr(39).$_.chr(39).","} @a), ");".chr(10);', 'print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)}  @a[3..9];', 'print "a = [", join(", ",map({chr(39).$_.chr(39)} @a)), "]".chr(10);', 'print map {$a=$_;$b=chr(33);$a=~s/$b/"/g;$a.chr(10)}  @a[10..$#a];', '$_ = <<"#";', '# !!!', 'for s in a[0:3]: print s.replace(chr(33), chr(34))', 'print "".join(["@a = ("]+map(lambda s:chr(39)+s+chr(39)+",", a)+[");"]);', 'for s in a[3:10]: print s.replace(chr(33), chr(34))', 'print "a =", a', 'for s in a[10:]: print s.replace(chr(33), chr(34))', '#', '# !!!']
+for s in a[0:3]: print s.replace(chr(33), chr(34))
+print "".join(["@a = ("]+map(lambda s:chr(39)+s+chr(39)+",", a)+[");"]);
+for s in a[3:10]: print s.replace(chr(33), chr(34))
+print "a =", a
+for s in a[10:]: print s.replace(chr(33), chr(34))
+#
+# """
